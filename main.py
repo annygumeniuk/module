@@ -13,3 +13,16 @@ def parse_lines(filename):
     return parsed_data
 
 
+def check_positive(fields) -> str:
+    positive_count = 0
+    for i in range(3):
+        person = fields[i]
+        if person['status'] == 'Positive':
+            positive_count += 1
+    return f"There are {positive_count} positive characters"
+
+
+lines = parse_lines('info.txt')
+positive = check_positive(lines)
+file = open('filtered.txt', 'w')
+file.write(positive)
