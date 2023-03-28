@@ -1,5 +1,9 @@
-def parse_lines(filename):
+import os
+
+
+def parse_lines():
     parsed_data = []
+    filename = os.path.join(os.path.dirname(__file__), 'info.txt')
     with open(filename, 'r') as f:
         for line in f:
             fields = line.strip().split()
@@ -23,7 +27,7 @@ def check_positive(fields) -> str:
 
 
 if __name__ == "__main__":
-    lines = parse_lines('D:/GitHub/module/info.txt')
+    lines = parse_lines()
     positive = check_positive(lines)
 
     file = open('filtered.txt', 'w')
