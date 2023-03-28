@@ -1,0 +1,4 @@
+Ned Stark 40 Positive
+Bran Stark 20 Positive
+Aria Stark 19 Positive
+White Walker 100 Negative
