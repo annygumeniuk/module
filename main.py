@@ -5,7 +5,7 @@ def parse_lines(filename):
             fields = line.strip().split()
             first_name = fields[0]
             last_name = fields[1]
-            age = fields[2]
+            age = int(fields[2])
             status = fields[3]
 
             record = {'FirstName': first_name, 'LastName': last_name, 'age': age, 'status': status}
@@ -22,7 +22,9 @@ def check_positive(fields) -> str:
     return f"There are {positive_count} positive characters"
 
 
-lines = parse_lines('info.txt')
-positive = check_positive(lines)
-file = open('filtered.txt', 'w')
-file.write(positive)
+if __name__ == "__main__":
+    lines = parse_lines('D:/GitHub/module/info.txt')
+    positive = check_positive(lines)
+
+    file = open('filtered.txt', 'w')
+    file.write(positive)
